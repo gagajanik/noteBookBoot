@@ -11,6 +11,8 @@ import javax.persistence.Table;
 @Table(name = "contacts")
 public class Contacts {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator ="SEQ_USERS")
+    @SequenceGenerator(name = "SEQ_USERS", sequenceName = "SEQ_USERS")
     private long id;
     private String name;
     private String lastName;
