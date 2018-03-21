@@ -1,8 +1,6 @@
 package com.notebook.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by root on 1/27/18.
@@ -11,8 +9,8 @@ import javax.persistence.Table;
 @Table(name = "contacts")
 public class Contacts {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator ="SEQ_USERS")
-    @SequenceGenerator(name = "SEQ_USERS", sequenceName = "SEQ_USERS")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator ="SEQ_CONTACTS")
+    @SequenceGenerator(name = "SEQ_CONTACTS", sequenceName = "SEQ_CONTACTS")
     private long id;
     private String name;
     private String lastName;
