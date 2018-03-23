@@ -26,7 +26,7 @@ public class ContactsController {
     public void createContact(@RequestBody CreateContactDTO cont){
         String result="";
       try {
-          Contacts contacts=new Contacts(cont.getName(), cont.getLastName(), cont.getPhone());
+          Contacts contacts=new Contacts(cont.getName(), cont.getLastName(), cont.getPhone(), cont.getStatus());
           contactsDao.save(contacts);
           result="DONE";
       }catch (Exception ex){
@@ -120,5 +120,10 @@ public class ContactsController {
     @RequestMapping("login")
     public String getPage(){
         return "index";
+    }
+
+    @RequestMapping(value="updateStatus", method = RequestMethod.PUT)
+    public void updateStatus(@RequestBody CreateContactDTO createContactDTO){
+        contactsDao.updateStatus(createContactDTO.getStatus(),createContactDTO.getId());
     }
 }

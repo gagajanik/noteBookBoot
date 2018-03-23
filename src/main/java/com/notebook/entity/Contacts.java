@@ -15,6 +15,15 @@ public class Contacts {
     private String name;
     private String lastName;
     private String phone;
+    private int status;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public long getId() {
         return id;
@@ -54,9 +63,10 @@ public class Contacts {
         this.id = id;
     }
 
-    public Contacts(String name, String lastName, String phone) {
+    public Contacts(String name, String lastName, String phone, int status) {
         this.name = name;
         this.lastName = lastName;
         this.phone=phone;
+        this.status=status;
     }
 }
